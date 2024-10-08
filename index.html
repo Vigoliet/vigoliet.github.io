@@ -52,6 +52,24 @@
     </div>
 
 
+    <button id="playSoundBtn">Easter Egg</button>
+
+    <script>
+        // URL of the sound
+        const soundUrl = "https://www.filterblade.xyz/assets/sounds/AlertSound6.mp3";
+
+        // Get the button element
+        const playSoundBtn = document.getElementById('playSoundBtn');
+
+        // Add click event listener to the button
+        playSoundBtn.addEventListener('click', function() {
+            // Create a new Audio instance each time the button is clicked
+            const alertSound = new Audio(soundUrl);
+            alertSound.play();
+        });
+    </script>
+
+
 </body>
 
 </html>
