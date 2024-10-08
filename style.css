@@ -109,7 +109,116 @@ body{
         padding: 0.5rem;
         margin: 0.5rem;
     }
+
+    
 }
 
+/* Responsive styles for 320px width */
+@media (max-width: 320px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .image-container img {
+        width: 150px;
+        height: 150px;
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .image-container h1 {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .image-container, .p-container {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+}
+
+/* Responsive styles for 321px to 340px width */
+@media (min-width: 321px) and (max-width: 340px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .image-container img {
+        width: 150px;
+        height: 150px;
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .image-container h1 {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .image-container, .p-container {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+}
+
+/* Responsive styles for 341px to 400px width */
+@media (min-width: 341px) and (max-width: 400px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.75rem;
+        margin: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .image-container img {
+        width: 175px;
+        height: 175px;
+        padding: 0.75rem;
+        margin: 0.75rem;
+    }
+
+    .image-container h1 {
+        font-size: 1.75rem;
+        margin: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .image-container, .p-container {
+        padding: 0.75rem;
+        margin: 0.75rem;
+    }
+}
+
+/* Responsive styles for 401px to 499px width */
+@media (min-width: 401px) and (max-width: 499px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 2rem;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .image-container img {
+        width: 200px;
+        height: 200px;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .image-container h1 {
+        font-size: 2rem;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .image-container, .p-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+}
 
 
