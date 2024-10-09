@@ -82,6 +82,26 @@ body{
     padding: 0.5rem;
 }
 
+/* Flexbox styles for list items */
+.skills-list, .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.skills-list li, .projects-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 
 /* Responsive styles for 320px width */
