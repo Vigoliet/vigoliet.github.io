@@ -102,35 +102,31 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.links a {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px; /* Add space between icons if needed */
+}
 
+.links a::after {
+    content: attr(data-hover); /* Display text from data-hover attribute */
+    position: absolute;
+    left: 50%;
+    bottom: 120%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 10;
+}
 
-/* Responsive styles for 320px width */
-@media (max-width: 320px) {
-    h1,h2,h3,h4,h5,h6 {
-        font-size: 1.5rem;
-        margin: 0.5rem;
-        padding: 0.5rem;
-    }
-
-    .image-container img {
-        width: 150px;
-        height: 150px;
-        padding: 0.5rem;
-        margin: 0.5rem;
-    }
-
-    .image-container h1 {
-        font-size: 1.5rem;
-        margin: 0.5rem;
-        padding: 0.5rem;
-    }
-
-    .image-container, .p-container {
-        padding: 0.5rem;
-        margin: 0.5rem;
-    }
-
-    
+.links a:hover::after {
+    opacity: 1; /* Show hover text when hovering over the icon */
 }
 
 /* Responsive styles for 320px width */
