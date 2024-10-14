@@ -1,76 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- font-awesome -->
     <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 </head>
-
 <body>
+    <header>
+        <a href="#" class="logo">Vigor</a>
 
-
-    <div class="image-container">
-        <h1>Vigor Lundkvist</h1>
-        <img src="/img/profile.jpg" alt="Github">
-    </div>
-
-    <div class="about-container">
-        <h1>About me</h1>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/vigor-lundkvist-371442200/" target="_blank" data-hover="Visit LinkedIn">
-                <img src="/img/linkedin.png" alt="Linkedin">
-            </a>
-            <a href="https://github.com/Vigoliet/" target="_blank" data-hover="Visit GitHub">
-                <img src="/img/github.png" alt="Github">
-            </a>
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#" >Skills</a>
+            <a href="#" >Education</a>
+            <a href="#" >Experience</a>
+            <a href="#" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="/img/profile.jpg" alt="">
         </div>
-        <p>Hi, I'm Vigor Lundkvist. I'm a web developer and I'm passionate about creating clean, responsive and
-            user-friendly websites.</p>
-        <p>Feel free to browse through my portfolio to see some of my work and get in touch if you have any questions or
-            projects in mind.</p>
+        <div class="home-content">
+            <h1>Hi, It's <span>Vigor</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/vigor-lundkvist-371442200/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/vigoliet" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="#" class="btn">Hire me</a>
+        </div>
+    </section>
 
-    </div>
-
-    <div class="list">
-        <h2>My skills</h2>
-        <ul class = skills-list>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Java</li>
-            <li>Aws</li>
-            <li>Git</li>
-            <li>MySQL</li>
-        </ul>
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/Vigoliet/cloud_development_assignment" target="_blank">Project 1</a></li>
-            <p>This is a project where I hosted a Song application with AWS services.</p>
-        </ul>
-    </div>
-
-
-    <button id="playSoundBtn">Easter Egg</button>
-
-    <script>
-        // URL of the sound
-        const soundUrl = "https://www.filterblade.xyz/assets/sounds/AlertSound6.mp3";
-
-        // Get the button element
-        const playSoundBtn = document.getElementById('playSoundBtn');
-
-        // Add click event listener to the button
-        playSoundBtn.addEventListener('click', function() {
-            // Create a new Audio instance each time the button is clicked
-            const alertSound = new Audio(soundUrl);
-            alertSound.play();
-        });
-    </script>
-
-
+    
 </body>
-
 </html>
