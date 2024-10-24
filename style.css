@@ -74,6 +74,10 @@ nav a.active{
     cursor: pointer;
 }
 
+.menu-icon {
+    font-size: 3rem; /* Adjust the size as needed */
+}
+
 @media(max-width:995px){
     nav{
         position: absolute;
