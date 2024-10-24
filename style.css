@@ -64,6 +64,16 @@ nav a.active{
     border-bottom: 3px solid #b74b4b;
 }
 
+/* Styles for the menu toggle button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 @media(max-width:995px){
     nav{
         position: absolute;
@@ -211,7 +221,6 @@ span{
     content: "";
     background-color: black;
     position: absolute;
-    width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid black;
     right: -8;
@@ -265,5 +274,41 @@ span{
     .home-img img{
         width: 70vw;
         margin-top: 4rem;
+    }
+}
+
+/* Responsive styles for 720px width and below */
+@media (max-width: 720px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        padding: 1rem;
+        border-top: 1px solid #444;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 1rem;
+        width: 100%;
+        text-align: left;
+        border-top: 1px solid #444;
+    }
+
+    nav a:first-child {
+        border-top: none;
     }
 }
