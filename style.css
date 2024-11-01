@@ -284,6 +284,88 @@ span{
     animation: cursor 0.6s infinite;
 }
 
+/* Styles for the skills section */
+.skills {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10rem; /* Add margin to the top to create space below the fixed header */
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.skills-list li {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 2rem); /* Responsive boxes */
+    box-sizing: border-box;
+}
+
+.skills-list li:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    background-color: #444; /* Change background color on hover */
+}
+
+/* Styles for the projects section */
+.projects {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10rem; /* Add margin to the top to create space below the fixed header */
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.project-item {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.project-item h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-item a {
+    color: #b74b4b;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+.project-item p {
+    font-size: 1.2rem;
+}
+
 @keyframes cursor{
     to{
         border-left: 3px solid #b74b4b;
