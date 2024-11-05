@@ -332,6 +332,10 @@ span{
     margin-top: 10rem; /* Add margin to the top to create space below the fixed header */
 }
 
+.project-item:hover{
+    transform: scale(1.05);
+}
+
 .projects h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
