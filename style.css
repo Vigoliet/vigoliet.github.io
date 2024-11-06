@@ -129,6 +129,26 @@ nav a.active{
     color:black;
     font-size: 16px;
 }
+.edit-button, .delete-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #e0e0e0;
+}
+
+.edit-button {
+    color: #007bff;
+}
+
+.delete-button {
+    color: #dc3545;
+}
 
 
 @media(max-width:995px){

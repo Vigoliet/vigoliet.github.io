@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Open (or create) the database
     let db;
     const request = indexedDB.open('notesDB', 1);
 
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Database error:', event.target.errorCode);
     };
 
-    // Add a new note
     document.getElementById('note-form').addEventListener('submit', function(event) {
         event.preventDefault();
         const noteContent = document.getElementById('note-content').value;
@@ -38,34 +36,58 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     });
 
-    // Display all notes
     function displayNotes() {
-        const notesList = document.getElementById('notes-list');
-        notesList.innerHTML = '';
-
         const transaction = db.transaction(['notes'], 'readonly');
         const objectStore = transaction.objectStore('notes');
-        const request = objectStore.openCursor();
+        const request = objectStore.getAll();
 
         request.onsuccess = function(event) {
-            const cursor = event.target.result;
-            if (cursor) {
+            const notes = event.target.result;
+            const notesList = document.getElementById('notes-list');
+            notesList.innerHTML = '';
+            notes.forEach(note => {
                 const noteItem = document.createElement('div');
                 noteItem.className = 'note-item';
                 noteItem.innerHTML = `
-                    <p>${cursor.value.content}</p>
-                    <button onclick="editNote(${cursor.value.id})">Edit</button>
-                    <button onclick="deleteNote(${cursor.value.id})">Delete</button>
+                    <p>${note.content}</p>
+                    <button class="edit-button" data-id="${note.id}">Edit</button>
+                    <button class="delete-button" data-id="${note.id}">Delete</button>
                 `;
                 notesList.appendChild(noteItem);
-                cursor.continue();
-            }
+            });
+
+            document.querySelectorAll('.delete-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = Number(this.getAttribute('data-id'));
+                    deleteNote(id);
+                });
+            });
+
+            document.querySelectorAll('.edit-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = Number(this.getAttribute('data-id'));
+                    editNote(id);
+                });
+            });
         };
     }
 
-    // Edit a note
-    window.editNote = function(id) {
+    function deleteNote(id) {
         const transaction = db.transaction(['notes'], 'readwrite');
+        const objectStore = transaction.objectStore('notes');
+        const request = objectStore.delete(id);
+
+        request.onsuccess = function() {
+            displayNotes();
+        };
+
+        request.onerror = function(event) {
+            console.error('Delete note error:', event.target.errorCode);
+        };
+    }
+
+    function editNote(id) {
+        const transaction = db.transaction(['notes'], 'readonly');
         const objectStore = transaction.objectStore('notes');
         const request = objectStore.get(id);
 
@@ -78,20 +100,5 @@ document.addEventListener('DOMContentLoaded', function() {
         request.onerror = function(event) {
             console.error('Edit note error:', event.target.errorCode);
         };
-    };
-
-    // Delete a note
-    window.deleteNote = function(id) {
-        const transaction = db.transaction(['notes'], 'readwrite');
-        const objectStore = transaction.objectStore('notes');
-        const request = objectStore.delete(id);
-
-        request.onsuccess = function() {
-            displayNotes();
-        };
-
-        request.onerror = function(event) {
-            console.error('Delete note error:', event.target.errorCode);
-        };
-    };
+    }
 });
